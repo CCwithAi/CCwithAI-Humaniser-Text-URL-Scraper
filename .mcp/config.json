@@ -1,0 +1,36 @@
+{
+  "mcpServers": {
+    "archon": {
+      "transport": "http",
+      "url": "http://localhost:8051/mcp",
+      "description": "Archon MCP server for task management, knowledge base, and project organization"
+    },
+    "docker-compose": {
+      "command": "docker",
+      "args": ["exec", "ai-humaniser-mcp", "mcp-docker-compose"],
+      "env": {
+        "COMPOSE_PROJECT_NAME": "ai-humaniser"
+      },
+      "description": "Docker Compose MCP server for container management"
+    },
+    "context7": {
+      "command": "docker",
+      "args": ["exec", "ai-humaniser-context7", "mcp-context"],
+      "env": {
+        "CONTEXT_WINDOW": "7"
+      },
+      "description": "Context7 MCP server for enhanced context management"
+    },
+    "supabase-mcp": {
+      "command": "docker",
+      "args": ["exec", "ai-humaniser-mcp", "mcp-supabase-client"],
+      "env": {
+        "SUPABASE_URL": "${SUPABASE_URL}",
+        "SUPABASE_ANON_KEY": "${SUPABASE_ANON_KEY}"
+      },
+      "description": "Supabase MCP integration"
+    }
+  },
+  "version": "1.0.0",
+  "project": "AI Humaniser"
+}

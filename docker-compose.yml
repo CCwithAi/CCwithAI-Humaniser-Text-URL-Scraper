@@ -1,0 +1,70 @@
+version: '3.8'
+
+services:
+  frontend:
+    image: node:22.11.0-alpine
+    container_name: ai-humaniser-frontend
+    working_dir: /app
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    command: sh -c "npm install && npm run dev"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
+      - NODE_ENV=development
+    networks:
+      - ai-humaniser-network
+    depends_on:
+      - backend
+
+  backend:
+    image: python:3.12.7-slim
+    container_name: ai-humaniser-backend
+    working_dir: /app
+    volumes:
+      - ./backend:/app
+    ports:
+      - "8000:8000"
+    command: sh -c "pip install --no-cache-dir -r requirements.txt && python main.py"
+    environment:
+      - SUPABASE_URL=${SUPABASE_URL}
+      - SUPABASE_KEY=${SUPABASE_KEY}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - PYTHONUNBUFFERED=1
+    networks:
+      - ai-humaniser-network
+    restart: unless-stopped
+
+  # NOTE: Archon MCP Server runs externally at http://localhost:8051/mcp
+  # We connect to the existing Archon instance via .mcp/config.json
+
+  # MCP Server for Docker integration
+  mcp-server:
+    image: modelcontextprotocol/server:latest
+    container_name: ai-humaniser-mcp
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./.mcp:/config
+    networks:
+      - ai-humaniser-network
+    restart: unless-stopped
+
+  # Context7 MCP Server
+  mcp-context7:
+    image: modelcontextprotocol/context7:latest
+    container_name: ai-humaniser-context7
+    environment:
+      - CONTEXT_WINDOW=7
+    networks:
+      - ai-humaniser-network
+    restart: unless-stopped
+
+networks:
+  ai-humaniser-network:
+    driver: bridge
+
+volumes:
+  node_modules:

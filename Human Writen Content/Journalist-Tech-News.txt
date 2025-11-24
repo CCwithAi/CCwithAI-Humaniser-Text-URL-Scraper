@@ -1,0 +1,21 @@
+The data breach happened six months ago. Nobody knew until yesterday.
+
+TechCore, the Manchester-based cloud storage company serving 200,000+ businesses, confirmed Tuesday evening that hackers accessed customer data between March and September last year. The company claims it discovered the breach in September but delayed public disclosure while "securing systems."
+
+That explanation isn't sitting well with customers.
+
+"We pay them to keep our data safe," said Rachel Morrison, director at Bristol-based accounting firm Henderson Associates. "They failed. Then they hid it for months. What are we supposed to do with that?"
+
+The breach exposed names, email addresses, and encrypted passwords. TechCore insists financial data remained secure, pointing to separate encryption protocols. Payment information was never accessed, the company stated. Whether anyone believes that is another question entirely.
+
+Industry analysts weren't impressed either.
+
+"This is textbook negligence," according to cybersecurity consultant James Liu of SecureWatch UK. He points to TechCore's six-month silence as particularly damaging. Companies must report breaches within 72 hours under GDPR rules. TechCore argues the requirement only applies after they "confirmed" the breach - a technicality that probably won't hold up.
+
+The Information Commissioner's Office opened an investigation Wednesday morning. Fines could reach £17 million or 4% of global turnover, whichever's higher. For TechCore, that's potentially devastating.
+
+CEO Marcus Webb apologised in a blog post late Wednesday, promising "enhanced security measures" and free credit monitoring for affected users. The stock price dropped 23% in morning trading Thursday. Some customers are already leaving.
+
+Morrison's firm cancelled their contract Tuesday night. "Trust is gone," she said. Simple as that.
+
+TechCore didn't respond to requests for comment on customer departures or the ICO investigation.

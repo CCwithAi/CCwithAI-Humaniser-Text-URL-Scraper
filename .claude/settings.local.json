@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__MCP_DOCKER__mcp-find",
+      "mcp__MCP_DOCKER__resolve-library-id",
+      "mcp__MCP_DOCKER__get-library-docs",
+      "Bash(python:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm install:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(npm run dev)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(taskkill /F /PID 437932)",
+      "Bash(dir:*)",
+      "Bash(del \"D:\\AI Humaniser\\backend\\test_api.py\")",
+      "mcp__MCP_DOCKER__brave_web_search",
+      "WebFetch(domain:www.theguardian.com)",
+      "mcp__MCP_DOCKER__browser_navigate",
+      "mcp__MCP_DOCKER__browser_evaluate",
+      "mcp__MCP_DOCKER__browser_close",
+      "Bash(pip install:*)",
+      "Bash(taskkill /F /PID 620280)",
+      "Bash(taskkill //F //PID 620280)",
+      "Bash(git init:*)",
+      "Bash(git remote add:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
